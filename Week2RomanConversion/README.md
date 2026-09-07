@@ -1,4 +1,4 @@
-# Week 1: Roman Numeral Conversion & Unit Testing
+# Week 2: Roman Numeral Conversion & Unit Testing
 
 **Course:** 192-211 Automated Software Testing  
 **Student:** Aeint Kyi Pyar Soe (6705140003)  
@@ -29,7 +29,7 @@ The converter strictly validates Roman numerals according to standard classical 
 ## Project Structure
 
 ```text
-Week1RomanConversion/
+Week2RomanConversion/
 ├── roman.py          # Main implementation & interactive CLI loop
 ├── test_roman.py     # Automated unit tests using pytest
 └── README.md         # Documentation
