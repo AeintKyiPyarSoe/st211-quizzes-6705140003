@@ -20,7 +20,7 @@ This module illustrates test organization best practices by grouping related tes
 A model representing a shopping cart with the following operations:
 - `add(name, price)`: Adds a new item entry `{"name": name, "price": price}` to the cart.
 - `total()`: Calculates and returns the sum of all item prices.
-- `count()` / `count_items()`: Returns the total count of items in the cart.
+- `count()` : Returns the total count of items in the cart.
 
 ### 2. `test_shopping.py` (`TestShoppingCart`)
 A test class containing targeted test cases:
