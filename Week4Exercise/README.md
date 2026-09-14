@@ -85,7 +85,7 @@ The exercises are structured into three distinct modules:
 Week4Exercise/
 ├── assertion-test/
 │   ├── test_floats.py           # Float precision & approx tests
-│   ├── test_list_equality.py    # List, dict, and set equality assertions
+│   ├── test_collections.py    # List, dict, and set equality assertions
 │   └── README.md                # Module documentation
 ├── organized-tests/
 │   ├── shopping.py              # ShoppingCart model implementation
@@ -151,10 +151,10 @@ collected 18 items
 
 assertion-test/test_floats.py::test_float_precision PASSED               [  5%]
 assertion-test/test_floats.py::test_float_without_approx_fails PASSED    [ 11%]
-assertion-test/test_list_equality.py::test_list_equality PASSED          [ 16%]
-assertion-test/test_list_equality.py::test_list_contents PASSED          [ 22%]
-assertion-test/test_list_equality.py::test_dict_equality PASSED          [ 27%]
-assertion-test/test_list_equality.py::test_set_operations PASSED         [ 33%]
+assertion-test/test_collections.py::test_list_equality PASSED          [ 16%]
+assertion-test/test_collections.py::test_list_contents PASSED          [ 22%]
+assertion-test/test_collections.py::test_dict_equality PASSED          [ 27%]
+assertion-test/test_collections.py::test_set_operations PASSED         [ 33%]
 organized-tests/test_shopping.py::TestShoppingCart::test_new_cart_is_empty PASSED [ 38%]
 organized-tests/test_shopping.py::TestShoppingCart::test_new_cart_total_is_zero PASSED [ 44%]
 organized-tests/test_shopping.py::TestShoppingCart::test_add_item_increases_count PASSED [ 50%]
