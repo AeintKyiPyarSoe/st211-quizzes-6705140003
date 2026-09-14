@@ -1,4 +1,4 @@
-# Week 2: Roman Numeral Conversion & Unit Testing
+# Roman Numeral Conversion & Unit Testing
 
 **Course:** 192-211 Automated Software Testing  
 **Student:** Aeint Kyi Pyar Soe (6705140003)  
