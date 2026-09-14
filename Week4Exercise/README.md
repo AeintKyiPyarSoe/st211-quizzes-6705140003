@@ -41,7 +41,7 @@ The exercises are structured into three distinct modules:
 - Defines the `ShoppingCart` class with methods:
   - `add(name, price)`: Adds item dictionary to cart.
   - `total()`: Computes total price across all items.
-  - `count()` / `count_items()`: Returns current item count in the cart.
+  - `count()` : Returns current item count in the cart.
 
 #### B. Test Class Structure (`test_shopping.py`)
 - **Concept:** Grouping related tests inside a class (`TestShoppingCart`) improves readability, namespaces test cases, and simplifies running specific test subsets.
