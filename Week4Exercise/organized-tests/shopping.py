@@ -8,5 +8,8 @@ class ShoppingCart:
     def total(self):
         return sum(item["price"] for item in self.items)
     
+    def count(self):
+        return len(self.items)
+    
     def count_items(self):
         return len(self.items)
