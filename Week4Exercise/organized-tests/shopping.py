@@ -11,5 +11,3 @@ class ShoppingCart:
     def count(self):
         return len(self.items)
     
-    def count_items(self):
-        return len(self.items)
