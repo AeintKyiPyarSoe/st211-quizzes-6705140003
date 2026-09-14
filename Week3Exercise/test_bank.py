@@ -1,10 +1,15 @@
 from bank import BankAccount
 
-def test_deposit_increases_balance():
+def test_deposit_positive_amount_increases_balance():
     account = BankAccount(100)
     new_balance = account.deposit(50)
     assert new_balance == 150
-    
+
+def test_deposit_zero_amount_does_not_change_balance():
+    account = BankAccount(100)
+    new_balance = account.deposit(0)
+    assert new_balance == 100
+
 def test_withdraw_decreases_balance():
     account = BankAccount(100)
     new_balance = account.withdraw(30)
