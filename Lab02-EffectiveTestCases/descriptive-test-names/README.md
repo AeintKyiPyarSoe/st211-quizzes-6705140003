@@ -26,8 +26,11 @@ When tests are named clearly and systematically, anyone reviewing test results (
 
 ## Naming Pattern & Examples
 
-A widely recognized standard for naming unit tests is:
-$$\text{test\_}\langle\text{action / unit\_under\_test}\rangle\text{\_}\langle\text{condition / scenario}\rangle\text{\_}\langle\text{expected\_result}\rangle$$
+1. **action / unit_under_test**: The specific method, function, or logical behavior being tested.
+
+2. **condition / scenario**: The state, specific inputs, or context under which the test is happening.
+
+3. **expected_result**: The exact outcome that should happen given those conditions.
 
 ### Code from `test_named.py`:
 
