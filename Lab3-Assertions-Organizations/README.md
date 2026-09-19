@@ -23,10 +23,12 @@ Key topics covered include:
 Lab3-Assertions-Organizations/
 ├── assertion-types/
 │   ├── test_collections.py              # List, dictionary, and set equality assertions
-│   └── test_floats.py                   # Floating-point precision & approx() comparisons
+│   ├── test_floats.py                   # Floating-point precision & approx() comparisons
+│   └── README.md                        # Assertion types documentation
 ├── organizing-tests-in-classes/
 │   ├── shopping.py                      # ShoppingCart domain implementation
-│   └── test_shopping.py                 # TestShoppingCart test class suite
+│   ├── test_shopping.py                 # TestShoppingCart test class suite
+│   └── README.md                        # Class-based tests documentation
 └── README.md                            # Lab 03 documentation
 ```
 

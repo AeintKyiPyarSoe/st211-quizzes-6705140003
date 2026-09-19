@@ -24,24 +24,30 @@ This directory contains the laboratory exercises for **Lab 02: Writing Effective
 Lab02-EffectiveTestCases/
 ├── bad-test/
 │   ├── bank.py                          # BankAccount domain model
-│   └── test_bad_example.py              # Demonstration of chained / "fat" test anti-pattern
+│   ├── test_bad_example.py              # Demonstration of chained / "fat" test anti-pattern
+│   └── README.md                        # Fat test documentation
 ├── clear-AAA-test/
 │   ├── bank.py                          # BankAccount domain model
-│   └── test_bank.py                     # Clean, single-responsibility test following AAA
+│   ├── test_bank.py                     # Clean, single-responsibility test following AAA
+│   └── README.md                        # Clear AAA test documentation
 ├── dependent-independent-tests/
 │   ├── bank.py                          # BankAccount domain model
 │   ├── test_dependent.py                # Anti-pattern: tests sharing mutable state & order dependent
-│   └── test_independent.py              # Best practice: isolated tests with fresh instances
+│   ├── test_independent.py              # Best practice: isolated tests with fresh instances
+│   └── README.md                        # Test independence documentation
 ├── descriptive-test-names/
 │   ├── bank.py                          # BankAccount domain model
-│   └── test_named.py                    # Living documentation with descriptive test names
+│   ├── test_named.py                    # Living documentation with descriptive test names
+│   └── README.md                        # Descriptive test naming documentation
 ├── edge-cases-and-boundary-values/
 │   ├── grades.py                        # Grade classifier with range validation
-│   └── test_grades.py                   # Boundary value analysis & negative out-of-range testing
+│   ├── test_grades.py                   # Boundary value analysis & negative out-of-range testing
+│   └── README.md                        # Boundary value analysis documentation
 ├── postive-negative-testing/
 │   ├── validators.py                    # Email regex validator & age domain validator
 │   ├── test_positive.py                 # Happy-path test cases (valid formats and boundary ages)
-│   └── test_negative.py                 # Error handling tests (invalid emails, negative/string ages)
+│   ├── test_negative.py                 # Error handling tests (invalid emails, negative/string ages)
+│   └── README.md                        # Positive and negative testing documentation
 └── README.md                            # Lab 02 documentation
 ```
 

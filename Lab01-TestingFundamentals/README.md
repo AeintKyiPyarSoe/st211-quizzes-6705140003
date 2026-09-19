@@ -25,13 +25,16 @@ Key testing fundamentals introduced in this lab include:
 Lab01-TestingFundamentals/
 ├── AAA-pattern-calculator/
 │   ├── calculator.py            # Basic arithmetic operations (add, divide)
-│   └── test_aaa_calculator.py   # Unit tests explicitly following the AAA pattern
+│   ├── test_aaa_calculator.py   # Unit tests explicitly following the AAA pattern
+│   └── README.md                # AAA pattern documentation
 ├── calculator/
 │   ├── calculator.py            # Arithmetic operations with zero-division handling
-│   └── test_calculator.py       # Basic test cases for addition and division
+│   ├── test_calculator.py       # Basic test cases for addition and division
+│   └── README.md                # Calculator testing documentation
 ├── failing-test/
 │   ├── calculator.py            # Arithmetic operations raising ValueError on zero division
-│   └── test_raise_error.py      # Exception testing with pytest.raises and regex matching
+│   ├── test_raise_error.py      # Exception testing with pytest.raises and regex matching
+│   └── README.md                # Exception testing documentation
 ├── test_first.py                # Introductory tests (arithmetic, strings, lists)
 ├── test_with_print.py           # Testing assertions alongside standard output
 └── README.md                    # Lab 01 documentation
