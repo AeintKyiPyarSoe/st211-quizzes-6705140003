@@ -43,6 +43,10 @@ st211-quizzes-6705140003/
 │   ├── skipping-and-expected-failures/  # Skip (unconditional/conditional) & xfail/xpass
 │   └── README.md                        # Lab 03 detailed documentation
 │
+├── Lab04-FixturesAndTestDataManagement/ # Lab 04: Fixtures & test data management
+│   ├── fixtures/                        # Reusable test dependencies & dependency injection
+│   └── README.md                        # Lab 04 detailed documentation
+│
 ├── RomanConversion/                     # Roman Numeral Converter & Test Suite
 │   ├── roman.py                         # Bidirectional converter & interactive CLI
 │   ├── test_roman.py                    # Parameterized unit & negative test suite
@@ -60,6 +64,7 @@ st211-quizzes-6705140003/
 | **Lab 01** | [`Lab01-TestingFundamentals/`](./Lab01-TestingFundamentals/) | Testing fundamentals, Pytest discovery, AAA pattern, basic assertions, exception assertions (`pytest.raises`) | [View README](./Lab01-TestingFundamentals/README.md) |
 | **Lab 02** | [`Lab02-EffectiveTestCases/`](./Lab02-EffectiveTestCases/) | "Fat test" anti-patterns, test independence vs. shared state, descriptive test naming, Boundary Value Analysis (BVA), positive & negative testing | [View README](./Lab02-EffectiveTestCases/README.md) |
 | **Lab 03** | [`Lab03-Assertions-Organizations/`](./Lab03-Assertions-Organizations/) | Deep collection comparisons, IEEE 754 float precision, class-based tests, custom markers, skipping & xfail, `pytest.ini` configuration | [View README](./Lab03-Assertions-Organizations/README.md) |
+| **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, eliminating Arrange duplication, test isolation | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
 
 ---
@@ -74,6 +79,7 @@ st211-quizzes-6705140003/
 6. **Floating-Point Arithmetic Verification:** Utilizing `pytest.approx()` to prevent false failures caused by IEEE 754 binary floating-point representation limits (`0.1 + 0.2 != 0.3`).
 7. **Class-Based Organization:** Organizing related test functions inside `Test*` classes without constructors to namespace test suites and enable clean reporting.
 8. **Parameterized Testing:** Leveraging `@pytest.mark.parametrize` to execute identical assertion logic against diverse datasets, boundary conditions, and invalid inputs without duplicating test code.
+9. **Fixtures & Dependency Injection:** Centralizing test object creation and state management using `@pytest.fixture`, injecting fresh dependencies per test to eliminate Arrange duplication and ensure isolation.
 
 ---
 
@@ -114,7 +120,10 @@ python -m pytest Lab02-EffectiveTestCases -v
 # 3. Run Lab 03 (Assertions, Organizations & Configuration)
 python -m pytest Lab03-Assertions-Organizations -v
 
-# 4. Run Roman Numeral Converter Tests
+# 4. Run Lab 04 (Fixtures & Test Data Management)
+python -m pytest Lab04-FixturesAndTestDataManagement/fixtures -v
+
+# 5. Run Roman Numeral Converter Tests
 python -m pytest RomanConversion/test_roman.py -v
 ```
 
