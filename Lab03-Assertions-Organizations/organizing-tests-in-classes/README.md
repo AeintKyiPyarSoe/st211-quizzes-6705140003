@@ -3,7 +3,7 @@
 **Course:** 192-211 Automated Software Testing  
 **Student:** Aeint Kyi Pyar Soe (6705140003)  
 **Institution:** Siam University  
-**Parent Directory:** [Lab3-Assertions-Organizations](../README.md)
+**Parent Directory:** [Lab03-Assertions-Organizations](../README.md)
 
 ---
 
@@ -95,7 +95,7 @@ class TestShoppingCart:
 
 ### From the Repository Root:
 ```bash
-python -m pytest Lab3-Assertions-Organizations/organizing-tests-in-classes -v
+python -m pytest Lab03-Assertions-Organizations/organizing-tests-in-classes -v
 ```
 
 ### Run Specifically by Class Name:

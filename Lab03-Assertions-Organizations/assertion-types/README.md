@@ -3,7 +3,7 @@
 **Course:** 192-211 Automated Software Testing  
 **Student:** Aeint Kyi Pyar Soe (6705140003)  
 **Institution:** Siam University  
-**Parent Directory:** [Lab3-Assertions-Organizations](../README.md)
+**Parent Directory:** [Lab03-Assertions-Organizations](../README.md)
 
 ---
 
@@ -87,13 +87,13 @@ def test_set_operations():
 ### From the Repository Root:
 ```bash
 # Run all assertion tests
-python -m pytest Lab3-Assertions-Organizations/assertion-types -v
+python -m pytest Lab03-Assertions-Organizations/assertion-types -v
 
 # Run floating-point tests
-python -m pytest Lab3-Assertions-Organizations/assertion-types/test_floats.py -v
+python -m pytest Lab03-Assertions-Organizations/assertion-types/test_floats.py -v
 
 # Run collection tests
-python -m pytest Lab3-Assertions-Organizations/assertion-types/test_collections.py -v
+python -m pytest Lab03-Assertions-Organizations/assertion-types/test_collections.py -v
 ```
 
 ### From within this Directory:

@@ -35,9 +35,12 @@ st211-quizzes-6705140003/
 │   ├── postive-negative-testing/        # Positive and negative validation testing
 │   └── README.md                        # Lab 02 detailed documentation
 │
-├── Lab3-Assertions-Organizations/       # Lab 03: Advanced assertions & class-based tests
+├── Lab03-Assertions-Organizations/      # Lab 03: Advanced assertions, organization & configuration
 │   ├── assertion-types/                 # Collection assertions & float precision (approx)
+│   ├── configuration-with-pytest.ini/   # pytest.ini configuration & strict marker validation
+│   ├── custom-markers/                  # Custom markers (smoke, slow, regression) & -m filters
 │   ├── organizing-tests-in-classes/     # Grouping tests under TestShoppingCart classes
+│   ├── skipping-and-expected-failures/  # Skip (unconditional/conditional) & xfail/xpass
 │   └── README.md                        # Lab 03 detailed documentation
 │
 ├── RomanConversion/                     # Roman Numeral Converter & Test Suite
@@ -56,7 +59,7 @@ st211-quizzes-6705140003/
 |---|---|---|:---:|
 | **Lab 01** | [`Lab01-TestingFundamentals/`](./Lab01-TestingFundamentals/) | Testing fundamentals, Pytest discovery, AAA pattern, basic assertions, exception assertions (`pytest.raises`) | [View README](./Lab01-TestingFundamentals/README.md) |
 | **Lab 02** | [`Lab02-EffectiveTestCases/`](./Lab02-EffectiveTestCases/) | "Fat test" anti-patterns, test independence vs. shared state, descriptive test naming, Boundary Value Analysis (BVA), positive & negative testing | [View README](./Lab02-EffectiveTestCases/README.md) |
-| **Lab 03** | [`Lab3-Assertions-Organizations/`](./Lab3-Assertions-Organizations/) | Deep collection comparisons (lists, dicts, sets), IEEE 754 float precision with `pytest.approx`, test class organization (`Test*`) | [View README](./Lab3-Assertions-Organizations/README.md) |
+| **Lab 03** | [`Lab03-Assertions-Organizations/`](./Lab03-Assertions-Organizations/) | Deep collection comparisons, IEEE 754 float precision, class-based tests, custom markers, skipping & xfail, `pytest.ini` configuration | [View README](./Lab03-Assertions-Organizations/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
 
 ---
@@ -108,8 +111,8 @@ python -m pytest Lab01-TestingFundamentals -v
 # 2. Run Lab 02 (Effective Test Cases)
 python -m pytest Lab02-EffectiveTestCases -v
 
-# 3. Run Lab 03 (Assertions & Organizations)
-python -m pytest Lab3-Assertions-Organizations -v
+# 3. Run Lab 03 (Assertions, Organizations & Configuration)
+python -m pytest Lab03-Assertions-Organizations -v
 
 # 4. Run Roman Numeral Converter Tests
 python -m pytest RomanConversion/test_roman.py -v
