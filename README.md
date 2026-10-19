@@ -47,6 +47,20 @@ st211-quizzes-6705140003/
 │   ├── fixtures/                        # Reusable test dependencies & dependency injection
 │   └── README.md                        # Lab 04 detailed documentation
 │
+├── Lab05-Parametrization/               # Lab 05: Parameterized testing & data-driven tests
+│   ├── basic-parameterization/          # Single & paired @pytest.mark.parametrize
+│   ├── data-driven-testing-from-external-files/ # CSV & JSON external data loaders
+│   ├── multiple-parameters/            # Multi-argument & Cartesian product combinations
+│   ├── parameter-ids-and-readability/   # Custom test IDs & per-parameter xfail marks
+│   ├── parametrized-fixtures/           # Multi-environment fixtures via request.param
+│   └── README.md                        # Lab 05 detailed documentation
+│
+├── Mock Lab/                            # Mock Lab: Test doubles & dependency isolation
+│   ├── test_problem.py                  # Weak non-deterministic test anti-pattern
+│   ├── test_solution.py                 # Deterministic testing with unittest.mock.patch
+│   ├── weather.py                       # Random weather simulation domain model
+│   └── README.md                        # Mock Lab detailed documentation
+│
 ├── RomanConversion/                     # Roman Numeral Converter & Test Suite
 │   ├── roman.py                         # Bidirectional converter & interactive CLI
 │   ├── test_roman.py                    # Parameterized unit & negative test suite
@@ -65,6 +79,8 @@ st211-quizzes-6705140003/
 | **Lab 02** | [`Lab02-EffectiveTestCases/`](./Lab02-EffectiveTestCases/) | "Fat test" anti-patterns, test independence vs. shared state, descriptive test naming, Boundary Value Analysis (BVA), positive & negative testing | [View README](./Lab02-EffectiveTestCases/README.md) |
 | **Lab 03** | [`Lab03-Assertions-Organizations/`](./Lab03-Assertions-Organizations/) | Deep collection comparisons, IEEE 754 float precision, class-based tests, custom markers, skipping & xfail, `pytest.ini` configuration | [View README](./Lab03-Assertions-Organizations/README.md) |
 | **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, eliminating Arrange duplication, test isolation | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
+| **Lab 05** | [`Lab05-Parametrization/`](./Lab05-Parametrization/) | Parameterized testing (`@pytest.mark.parametrize`), Cartesian products, custom parameter IDs, per-test xfail marks, parametrized fixtures, data-driven testing (JSON/CSV) | [View README](./Lab05-Parametrization/README.md) |
+| **Mock Lab** | [`Mock Lab/`](./Mock%20Lab/) | Test doubles, deterministic testing with `unittest.mock.patch`, isolating random dependencies, 100% branch coverage | [View README](./Mock%20Lab/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
 
 ---
@@ -80,6 +96,8 @@ st211-quizzes-6705140003/
 7. **Class-Based Organization:** Organizing related test functions inside `Test*` classes without constructors to namespace test suites and enable clean reporting.
 8. **Parameterized Testing:** Leveraging `@pytest.mark.parametrize` to execute identical assertion logic against diverse datasets, boundary conditions, and invalid inputs without duplicating test code.
 9. **Fixtures & Dependency Injection:** Centralizing test object creation and state management using `@pytest.fixture`, injecting fresh dependencies per test to eliminate Arrange duplication and ensure isolation.
+10. **Test Doubles & Mocking:** Intercepting non-deterministic, slow, or volatile dependencies using `unittest.mock.patch` to guarantee reproducible test outcomes and complete branch coverage.
+11. **External Data-Driven Testing (DDT):** Decoupling datasets from test code by loading external CSV and JSON data files dynamically at test collection time.
 
 ---
 
@@ -123,7 +141,15 @@ python -m pytest Lab03-Assertions-Organizations -v
 # 4. Run Lab 04 (Fixtures & Test Data Management)
 python -m pytest Lab04-FixturesAndTestDataManagement/fixtures -v
 
-# 5. Run Roman Numeral Converter Tests
+# 5. Run Lab 05 (Parameterized Testing & Data-Driven Tests)
+python -m pytest Lab05-Parametrization/basic-parameterization -v
+python -m pytest Lab05-Parametrization/multiple-parameters -v
+python -m pytest Lab05-Parametrization/parametrized-fixtures -v
+
+# 6. Run Mock Lab (Deterministic Mocking with unittest.mock)
+python -m pytest "Mock Lab" -v
+
+# 7. Run Roman Numeral Converter Tests
 python -m pytest RomanConversion/test_roman.py -v
 ```
 
