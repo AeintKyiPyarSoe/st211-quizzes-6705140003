@@ -44,7 +44,11 @@ st211-quizzes-6705140003/
 │   └── README.md                        # Lab 03 detailed documentation
 │
 ├── Lab04-FixturesAndTestDataManagement/ # Lab 04: Fixtures & test data management
+│   ├── factory-fixtures/                # Dynamic object generation & batch teardown
+│   ├── fixture-scope/                   # Fixture lifecycles & sharing scopes
 │   ├── fixtures/                        # Reusable test dependencies & dependency injection
+│   ├── setup-and-teardown/              # Resource allocation & guaranteed cleanup
+│   ├── sharing-fixtures-with-conftest.py/ # Global directory-level fixture discovery
 │   └── README.md                        # Lab 04 detailed documentation
 │
 ├── Lab05-Parametrization/               # Lab 05: Parameterized testing & data-driven tests
@@ -78,7 +82,7 @@ st211-quizzes-6705140003/
 | **Lab 01** | [`Lab01-TestingFundamentals/`](./Lab01-TestingFundamentals/) | Testing fundamentals, Pytest discovery, AAA pattern, basic assertions, exception assertions (`pytest.raises`) | [View README](./Lab01-TestingFundamentals/README.md) |
 | **Lab 02** | [`Lab02-EffectiveTestCases/`](./Lab02-EffectiveTestCases/) | "Fat test" anti-patterns, test independence vs. shared state, descriptive test naming, Boundary Value Analysis (BVA), positive & negative testing | [View README](./Lab02-EffectiveTestCases/README.md) |
 | **Lab 03** | [`Lab03-Assertions-Organizations/`](./Lab03-Assertions-Organizations/) | Deep collection comparisons, IEEE 754 float precision, class-based tests, custom markers, skipping & xfail, `pytest.ini` configuration | [View README](./Lab03-Assertions-Organizations/README.md) |
-| **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, eliminating Arrange duplication, test isolation | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
+| **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, setup/teardown (`yield`), fixture scopes, global sharing (`conftest.py`), factory fixtures | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
 | **Lab 05** | [`Lab05-Parametrization/`](./Lab05-Parametrization/) | Parameterized testing (`@pytest.mark.parametrize`), Cartesian products, custom parameter IDs, per-test xfail marks, parametrized fixtures, data-driven testing (JSON/CSV) | [View README](./Lab05-Parametrization/README.md) |
 | **Mock Lab** | [`Mock Lab/`](./Mock%20Lab/) | Test doubles, deterministic testing with `unittest.mock.patch`, isolating random dependencies, 100% branch coverage | [View README](./Mock%20Lab/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
