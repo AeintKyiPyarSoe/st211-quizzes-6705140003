@@ -59,11 +59,15 @@ st211-quizzes-6705140003/
 │   ├── parametrized-fixtures/           # Multi-environment fixtures via request.param
 │   └── README.md                        # Lab 05 detailed documentation
 │
-├── Mock Lab/                            # Mock Lab: Test doubles & dependency isolation
-│   ├── test_problem.py                  # Weak non-deterministic test anti-pattern
-│   ├── test_solution.py                 # Deterministic testing with unittest.mock.patch
-│   ├── weather.py                       # Random weather simulation domain model
-│   └── README.md                        # Mock Lab detailed documentation
+├── Lab06-MockingAndTestDoubles/          # Lab 06: Test doubles, mocking & dependency isolation
+│   ├── code-that-depends-on-randomness/  # Isolating non-deterministic dependencies (randomness)
+│   │   ├── test_problem.py               # Weak non-deterministic test anti-pattern
+│   │   ├── test_solution.py              # Deterministic testing with unittest.mock.patch
+│   │   ├── weather.py                    # Random weather simulation domain model
+│   │   └── README.md                     # Randomness isolation guide
+│   ├── payment.py                        # PaymentGateway & OrderProcessor domain models
+│   ├── test_mock_basics.py               # Core Mock object mechanics & return values
+│   └── README.md                         # Lab 06 detailed documentation
 │
 ├── RomanConversion/                     # Roman Numeral Converter & Test Suite
 │   ├── roman.py                         # Bidirectional converter & interactive CLI
@@ -84,7 +88,7 @@ st211-quizzes-6705140003/
 | **Lab 03** | [`Lab03-Assertions-Organizations/`](./Lab03-Assertions-Organizations/) | Deep collection comparisons, IEEE 754 float precision, class-based tests, custom markers, skipping & xfail, `pytest.ini` configuration | [View README](./Lab03-Assertions-Organizations/README.md) |
 | **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, setup/teardown (`yield`), fixture scopes, global sharing (`conftest.py`), factory fixtures | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
 | **Lab 05** | [`Lab05-Parametrization/`](./Lab05-Parametrization/) | Parameterized testing (`@pytest.mark.parametrize`), Cartesian products, custom parameter IDs, per-test xfail marks, parametrized fixtures, data-driven testing (JSON/CSV) | [View README](./Lab05-Parametrization/README.md) |
-| **Mock Lab** | [`Mock Lab/`](./Mock%20Lab/) | Test doubles, deterministic testing with `unittest.mock.patch`, isolating random dependencies, 100% branch coverage | [View README](./Mock%20Lab/README.md) |
+| **Lab 06** | [`Lab06-MockingAndTestDoubles/`](./Lab06-MockingAndTestDoubles/) | Test doubles & mocks (`unittest.mock`), isolating non-deterministic dependencies (randomness), mock object configuration, dependency injection, 100% branch coverage | [View README](./Lab06-MockingAndTestDoubles/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
 
 ---
@@ -100,7 +104,7 @@ st211-quizzes-6705140003/
 7. **Class-Based Organization:** Organizing related test functions inside `Test*` classes without constructors to namespace test suites and enable clean reporting.
 8. **Parameterized Testing:** Leveraging `@pytest.mark.parametrize` to execute identical assertion logic against diverse datasets, boundary conditions, and invalid inputs without duplicating test code.
 9. **Fixtures & Dependency Injection:** Centralizing test object creation and state management using `@pytest.fixture`, injecting fresh dependencies per test to eliminate Arrange duplication and ensure isolation.
-10. **Test Doubles & Mocking:** Intercepting non-deterministic, slow, or volatile dependencies using `unittest.mock.patch` to guarantee reproducible test outcomes and complete branch coverage.
+10. **Test Doubles & Mocking:** Intercepting non-deterministic, slow, or volatile dependencies using `unittest.mock` (`Mock`, `patch`) to guarantee reproducible test outcomes, test collaborator interactions, and achieve complete branch coverage.
 11. **External Data-Driven Testing (DDT):** Decoupling datasets from test code by loading external CSV and JSON data files dynamically at test collection time.
 
 ---
@@ -150,8 +154,10 @@ python -m pytest Lab05-Parametrization/basic-parameterization -v
 python -m pytest Lab05-Parametrization/multiple-parameters -v
 python -m pytest Lab05-Parametrization/parametrized-fixtures -v
 
-# 6. Run Mock Lab (Deterministic Mocking with unittest.mock)
-python -m pytest "Mock Lab" -v
+# 6. Run Lab 06 (Mocking & Test Doubles)
+python -m pytest Lab06-MockingAndTestDoubles -v
+python -m pytest Lab06-MockingAndTestDoubles/test_mock_basics.py -v
+python -m pytest Lab06-MockingAndTestDoubles/code-that-depends-on-randomness -v
 
 # 7. Run Roman Numeral Converter Tests
 python -m pytest RomanConversion/test_roman.py -v
