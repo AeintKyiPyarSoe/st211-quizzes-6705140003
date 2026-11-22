@@ -69,6 +69,15 @@ st211-quizzes-6705140003/
 │   ├── test_mock_basics.py               # Core Mock object mechanics & return values
 │   └── README.md                         # Lab 06 detailed documentation
 │
+├── Code-Coverage/                       # Code Coverage: Statement, branch & condition analysis
+│   ├── access.py                        # SUT: Role-based access control logic
+│   ├── test_access_weak.py              # Incomplete condition coverage anti-pattern
+│   ├── test_access_complete.py          # Complete truth table MC/DC condition coverage
+│   ├── shipping.py                      # SUT: Parcel shipping calculator & free shipping predicate
+│   ├── test_shipping.py                 # Partial coverage suite (73% statement coverage)
+│   ├── test_shipping_complete.py        # 100% statement & branch coverage suite
+│   └── README.md                        # Code coverage detailed documentation
+│
 ├── RomanConversion/                     # Roman Numeral Converter & Test Suite
 │   ├── roman.py                         # Bidirectional converter & interactive CLI
 │   ├── test_roman.py                    # Parameterized unit & negative test suite
@@ -89,6 +98,7 @@ st211-quizzes-6705140003/
 | **Lab 04** | [`Lab04-FixturesAndTestDataManagement/`](./Lab04-FixturesAndTestDataManagement/) | Pytest fixtures (`@pytest.fixture`), dependency injection, setup/teardown (`yield`), fixture scopes, global sharing (`conftest.py`), factory fixtures | [View README](./Lab04-FixturesAndTestDataManagement/README.md) |
 | **Lab 05** | [`Lab05-Parametrization/`](./Lab05-Parametrization/) | Parameterized testing (`@pytest.mark.parametrize`), Cartesian products, custom parameter IDs, per-test xfail marks, parametrized fixtures, data-driven testing (JSON/CSV) | [View README](./Lab05-Parametrization/README.md) |
 | **Lab 06** | [`Lab06-MockingAndTestDoubles/`](./Lab06-MockingAndTestDoubles/) | Test doubles & mocks (`unittest.mock`), isolating non-deterministic dependencies (randomness), mock object configuration, dependency injection, 100% branch coverage | [View README](./Lab06-MockingAndTestDoubles/README.md) |
+| **Code Coverage** | [`Code-Coverage/`](./Code-Coverage/) | Statement coverage, branch coverage, condition coverage (MC/DC truth tables), `pytest-cov`, missing line analysis, HTML coverage reports | [View README](./Code-Coverage/README.md) |
 | **Roman Converter** | [`RomanConversion/`](./RomanConversion/) | Bidirectional Roman-to-Integer converter, classical grammar rules, round-trip canonical validation, `@pytest.mark.parametrize` suite | [View README](./RomanConversion/README.md) |
 
 ---
@@ -106,6 +116,7 @@ st211-quizzes-6705140003/
 9. **Fixtures & Dependency Injection:** Centralizing test object creation and state management using `@pytest.fixture`, injecting fresh dependencies per test to eliminate Arrange duplication and ensure isolation.
 10. **Test Doubles & Mocking:** Intercepting non-deterministic, slow, or volatile dependencies using `unittest.mock` (`Mock`, `patch`) to guarantee reproducible test outcomes, test collaborator interactions, and achieve complete branch coverage.
 11. **External Data-Driven Testing (DDT):** Decoupling datasets from test code by loading external CSV and JSON data files dynamically at test collection time.
+12. **Code Coverage Analysis (Statement, Branch & Condition):** Measuring code execution during test runs using `pytest-cov` and `coverage`. Differentiating between superficial line coverage and comprehensive branch/condition coverage (MC/DC) to eliminate untested logic branches, hidden edge cases, and short-circuit boolean flaws.
 
 ---
 
@@ -116,9 +127,9 @@ st211-quizzes-6705140003/
 - **Pytest:** Version 7.0 or higher
 
 ### Installing Dependencies
-Ensure `pytest` is installed in your Python environment:
+Ensure `pytest` and code coverage plugins are installed in your Python environment:
 ```bash
-pip install pytest
+pip install pytest pytest-cov coverage
 ```
 
 ---
@@ -161,6 +172,13 @@ python -m pytest Lab06-MockingAndTestDoubles/code-that-depends-on-randomness -v
 
 # 7. Run Roman Numeral Converter Tests
 python -m pytest RomanConversion/test_roman.py -v
+
+# 8. Run Code Coverage Suite & Reports
+python -m pytest Code-Coverage -v
+python -m pytest Code-Coverage --cov=Code-Coverage --cov-report=term-missing --cov-branch
+python -m pytest Code-Coverage/test_shipping.py --cov=shipping --cov-report=term-missing
+python -m pytest Code-Coverage/test_shipping_complete.py --cov=shipping --cov-report=term-missing --cov-branch
+python -m pytest Code-Coverage/test_access_complete.py --cov=access --cov-report=term-missing --cov-branch
 ```
 
 ### Running Interactive Programs
